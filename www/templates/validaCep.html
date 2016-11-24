@@ -1,0 +1,58 @@
+<ion-view title="Valida Cep">
+
+<!-- Footer -->
+<div class="tabs tabs-icon-left">
+  <a class="tab-item" href="#/app/home">
+    <i class="icon ion-home"></i>
+    Home
+  </a>
+  <a class="tab-item">
+    <i class="icon ion-star"></i>
+    Favoritos
+  </a>
+  <a class="tab-item">
+    <i class="icon ion-gear-a"></i>
+    ferramentas
+  </a>
+</div>
+
+  <div class="bar bar-subheader item-input-inset">
+    <div class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input id="textoBusca" type="search" placeholder="Buscar Cep" ng-model="cep" autocorrect="off" >
+      <button class="button button-clear" ng-click="limparBusca()">X</button>
+    </div>
+    <button class="button button-clear" ng-click="buscarCep()">Buscar</button>
+  </div>
+
+    </div>
+
+
+<!-- Inicio do formulario -->
+
+      <form method="get" action=".">
+       
+         <label class="item item-input">
+           <span class="input-label">CEP</span>
+           <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" />
+         
+        </label>   
+        
+        <i class="ion-android-person"></i>
+        <label>Rua:
+        <input name="rua" type="text" id="rua" size="60" ng-model='endereco.logradouro'/></label><br />
+        <label>Bairro:
+        <input name="bairro" type="text" id="bairro" size="40" ng-model='endereco.bairro'/></label><br />
+        <label>Cidade:
+        <input name="cidade" type="text" id="cidade" size="40" ng-model='endereco.localidade'/></label><br />
+        <label>Estado:
+       <input name="uf" type="text" id="uf" size="2" ng-model='endereco.uf' /></label><br />
+        <!--<label>IBGE:
+        <input name="ibge" type="text" id="ibge" size="8" ng-model='endereco.ibge'/></label><br />
+        !-->
+      </form>
+    </body>
+
+    
+  </ion-content>
+</ion-view>

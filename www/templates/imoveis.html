@@ -1,0 +1,23 @@
+<ion-view title="Imóveis">
+
+  <div class="bar bar-subheader item-input-inset">
+    <div class="item-input-wrapper">
+      <i class="icon ion-ios7-search placeholder-icon"></i>
+      <input id="textoBusca" type="search" placeholder="Buscar" ng-model="textoBusca" autocorrect="off" >
+      <button class="button button-clear" ng-click="limparBusca()">X</button>
+    </div>
+    <button class="button button-clear" ng-click="buscar()">Buscar</button>
+  </div>
+
+  <ion-content class="has-header has-subheader">
+    <ion-list>
+      <ion-item ng-repeat="imovel in imoveis.rows" type="item-text-wrap" class="item item-thumbnail-left"
+                href="#/app/imovel/{{imovel.id}}">
+        <img src="{{imovel.imagem}}"/>
+        {{imovel.titulo}}
+        <p>{{imovel.descricao}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,37 @@
+<ion-view title="Detalhe do Imóvel">
+
+  <ion-content has-header="true" padding="true">
+    <div class="list card">
+
+      <div class="item item-divider">
+        <h2 style="text-align: center;">{{imovel.titulo}}</h2>
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" src="{{imovel.imagem}}">
+        <p>
+          {{imovel.descricao}}
+        </p>
+      </div>
+
+      <div class="item">
+        <h3  style="text-align: center;">Valor: R$ {{imovel.valor}}</h3>
+      </div>
+
+    </div>
+
+      <div class="list card">
+        <a class="item item-icon-left" href="tel: {{imovel.telefoneContato}}"><i class="icon ion-android-call"></i>Ligar<p>{{imovel.telefoneContato}}</p></a>
+        <a class="item item-icon-left" href="sms: {{imovel.telefoneContato}}"><i class="icon ion-chatbox-working"></i>SMS<p>{{imovel.telefoneContato}}</p></a>
+        <a class="item item-icon-left" href="mailto: {{imovel.emailContato}}"><i class="icon ion-email"></i>Email<p>{{imovel.emailContato}}</p></a>
+      </div>
+
+  <!--    <div style="text-align: center;">
+        <button class="button button-outline icon-right ion-share button-balanced" ng-click="compartilhar(imovel.descricao, imovel.titulo, imovel.imagem, 'http://www.ticarpa.com.br')">
+          Compartilhar
+        </button>
+      </div>
+-->
+  </ion-content>
+</ion-view>
+
