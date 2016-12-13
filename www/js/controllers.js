@@ -5,6 +5,7 @@ angular.module('starter.controllers', [])
   .controller('AppCtrl', function($scope) {
 
   })
+  
 
   //Controle para lista de imoveis
   .controller('ImoveisCtrl', function ($rootScope, $stateParams, $scope, ImoveisService) {
@@ -24,6 +25,10 @@ angular.module('starter.controllers', [])
 
     //Caso nao seja selecionado a busca este sera o metodo padrao de busca
     $scope.imoveis = ImoveisService.query();
+
+    $scope.quandoAlterarTextoBusca = function (textoBusca) {
+      console.log(textoBusca);
+    };
   })
 
   //Controle referente ao detalhe do imovel
@@ -33,6 +38,11 @@ angular.module('starter.controllers', [])
     $scope.imovel = ImovelService.show({id: $stateParams.id});
   })
 
+
+// Efeitos css e Hmtl
+   .controller('AppEfeito', function($scope,$rootScope, $state,$stateParams) {
+
+  })
 
 
 
@@ -87,7 +97,7 @@ angular.module('starter.controllers', [])
      console.log("ok");
  
   }, function(error){
-    console.log("Could not get location");
+    console.log("Não foi possível obter o local desejado");
   });
 }), 
 
@@ -100,7 +110,7 @@ google.maps.event.addListenerOnce($scope.map, 'idle', function(){
   });      
 
   var infoWindow = new google.maps.InfoWindow({
-      content: "Here I am!"
+      content: "Aqui estou!"
   });
  
   google.maps.event.addListener(marker, 'click', function () {

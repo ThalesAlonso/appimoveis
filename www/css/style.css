@@ -7,3 +7,338 @@
     height: 100%;
 }   
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+body{
+  
+}
+html, body,#world{
+  height: 100%;
+  width: 100%;
+}
+
+#world{
+  background-color: #000; 
+  perspective:500px;
+}
+
+
+#floor{
+  width: 100%;
+  height: 2000vh;
+  position: fixed;
+  bottom:0;
+  transform-origin: center bottom;
+  transform: rotateX(-45deg);
+  
+  /*background-image: linear-gradient( 90deg, @col3, @col4,@col3 50%, @col4, @col3); */
+background-image: linear-gradient(aqua 4px, transparent 4px),
+linear-gradient(90deg, aqua 4px, transparent 4px),
+linear-gradient(rgba(255,255,255,.3) 3px, transparent 3px),
+linear-gradient(90deg, rgba(255,255,255,.3) 3px, transparent 3px);
+background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+
+   animation:bg 3s  infinite linear;
+ 
+}
+
+@keyframes bg{
+  0%{
+    transform:rotateX(45deg) translateY(100px) ;
+  }
+  100%{
+    transform:rotateX(45deg) translateY(0px) ;
+  }
+}
+
+/* -- blob -- */
+
+#dude{
+  position: absolute;
+  bottom:80px;
+  left:50%;
+  margin-left:-80px;
+}
+
+.leg{
+  position: absolute;
+  width: 40px;
+  height: 120px;
+  bottom: 0;
+  border-radius:20px 20px 0 0;
+}
+
+#legl{
+  left:-30px;
+   background-color: aqua;
+  animation:leg 1s infinite linear;
+}
+
+#legr{
+  left:110px;
+  background-color: aqua;
+  animation:leg 1s  .5s infinite linear;
+}
+
+#body{
+  width: 160px;
+  height: 160px;
+  background-color: pink;
+  border-radius:50%;
+  position: absolute;
+  bottom:80px;
+  left:-20px;
+  text-align: center;
+  line-height:160px;
+  font-size:32px;
+  
+  animation:body .5s  infinite linear;
+}
+
+
+
+
+
+@keyframes leg{
+  0%{
+   
+    transform: translateZ(0px) translateY(0px);
+  }
+  
+ 10%{
+  
+   transform: translateZ(0px) translateY(-10px);
+  }
+  
+  40%{
+    
+    transform: translateZ(30px) translateY(-10px);
+  }
+  
+  50%{
+    transform: translateZ(30px) translateY(0px);
+  }
+  
+  100%{
+    transform: translateZ(0px) translateY(0px);
+  }
+  
+}
+
+
+@keyframes body{
+  0%{
+    bottom:70px;
+  }
+  50%{
+    bottom:80px;
+  }
+  100%{
+    bottom:70px;
+  }
+}
+
+
+#girl{
+  left:50%;
+  margin-left:-30px;
+  width: 0;
+  height: 0;
+  position: fixed;
+  bottom: 40px;
+  border:10px solid transparent;
+  border-bottom:30px solid white;
+  transform: rotate(0deg);
+  animation: girl .25s infinite;
+}
+
+@keyframes girl{
+  0%{
+    bottom: 40px;
+  }
+  
+  25%{
+    transform: rotate(10deg);
+  }
+  50%{
+    bottom: 36px;
+  }
+  
+  75%{
+    transform: rotate(-10deg);
+  }
+  100%{
+    bottom: 40px;
+  }
+}
+
+/*head*/
+#girl:after, #girl:before{
+  content:"";
+  display:block;
+  background-color: white;
+  position: absolute;
+  
+ 
+}
+#girl:before{
+  width: 20px;
+  height: 20px;
+   border-radius:50%;
+  left:-10px;top:-14px;
+  transform: rotate(-45deg);
+  background-color: aqua;
+ 
+}
+
+#girl:after{
+  content:"°°";
+  letter-spacing:-1px;
+  font-size:16px;
+  width: 14px;
+  height: 14px;
+  border-radius:50%;
+  top:-7px;left:-6px;
+  text-align: center;
+}
+
+#arm1, #arm2{
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border:solid white 3px;
+  border-top:solid transparent 3px;
+  border-left:solid transparent 3px;
+  transform-origin:left bottom ;
+  position: absolute;
+  top:-4px;
+  left:0px;
+}
+
+#arm1{
+  transform: rotateY(30deg);
+  animation:arm1 .5s infinite linear;
+}
+
+#arm2{
+  transform: rotateY(120deg);
+  animation:arm2 .5s .25s linear infinite;
+}
+
+@keyframes arm1{
+  0%{
+     transform: rotateX(120deg) rotateY(30deg);
+  }
+   50%{
+    transform: rotateX(40deg) rotateY(30deg);
+  }
+   100%{
+    transform: rotateX(120deg) rotateY(30deg);
+  }
+}
+
+@keyframes arm2{
+  0%{
+     transform: rotateX(120deg) rotateY(150deg);
+  }
+  
+   50%{
+    transform: rotateX(40deg) rotateY(150deg);
+  }
+  
+   100%{
+    transform: rotateX(120deg) rotateY(150deg);
+  }
+}
+
+/* girl legs*/
+
+#hip1, #hip2, #knee1, #knee2{
+  position: absolute;
+  width: 4px;
+  height: 14px;
+  border-radius:2px;
+  background-color: #fff;
+  transform-origin: top center;
+  
+}
+#hip1, #hip2{
+  bottom:-40px;
+}
+
+#hip1{
+  left:-8px;
+  animation:hip .5s infinite linear;
+}
+#hip2{
+  left:4px;
+  animation:hip .5s .25s infinite linear;
+}
+
+#knee1, #knee2{
+  background-color: white;
+  bottom:-12px;
+}
+
+#knee1{
+  animation:knee .5s infinite linear;
+}
+#knee2{
+  animation:knee .5s .25s infinite linear;
+}
+
+
+
+@keyframes hip{
+  0%{
+   transform: rotateX(45deg)
+  }
+  
+  25%{
+    transform: rotateX(-120deg);
+  }
+  
+  30%{
+    transform: rotateX(-120deg);
+  }
+  
+  100%{
+    transform: rotateX(45deg)
+  }
+  
+}
+
+@keyframes knee{
+   0%{
+    transform: rotateX(90deg)
+  }
+  
+  33%{
+   /*voor*/
+    transform: rotateX(90deg)
+  }
+  
+  45%{
+    transform: rotateX(0deg)
+  }
+  
+  100%{
+   transform: rotateX(90deg)
+  }
+  
+}
+
+
+#world{
+  animation:world 5s infinite;
+}
+
+@keyframes world{
+ 
+}

@@ -88,7 +88,23 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
         controller: 'ImovelCtrl'
       }
     }
-  }),
+  })
+
+// efeitos
+ .state('app.efeitos', {
+   url: '/efeitos',
+   views: {
+     'menuContent': {
+       templateUrl: 'templates/efeitos.html',
+       controller: 'AppEfeito'
+     }
+   }
+ })
+
+
+
+
+
 
 // Rota Google Maps 
   $stateProvider
